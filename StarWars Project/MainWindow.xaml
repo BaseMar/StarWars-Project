@@ -115,6 +115,26 @@
             </StackPanel>
 
             <Grid>
+                <Grid.RowDefinitions>
+                    <!--Control Bar-->
+                    <RowDefinition Height="25"/>
+                    <!--Header Caption-->
+                    <RowDefinition Height="35"/>
+                    <!--Content Section-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!--Control Bar-->
+                <StackPanel x:Name="panelControlBar"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            FlowDirection="RightToLeft"
+                            Background="Transparent"
+                            Margin="0,0,5,0"
+                            MouseLeftButtonDown="panelControlBar_MouseLeftButtonDown"
+                            MouseEnter="panelControlBar_MouseEnter">
+                    
+                </StackPanel>
                 <ContentControl Content="{Binding}"/>
             </Grid>
         </DockPanel>
