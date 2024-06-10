@@ -1,0 +1,123 @@
+﻿<Window x:Class="StarWars_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarWars_Project"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:modelviews="clr-namespace:StarWars_Project.ViewModel"
+        xmlns:views="clr-namespace:StarWars_Project.View"
+        mc:Ignorable="d"
+        Title="StarWars Helper" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None">
+
+    <Window.Resources>
+        <!-- Data Templates -->
+        <DataTemplate x:Name="CharacterSheetTemplate"
+                      DataType="{x:Type modelviews:CharacterSheetVM}">
+            <views:CharacterSheet DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Name="MapTemplate"
+                      DataType="{x:Type modelviews:MapVM}">
+            <views:Map DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Name="SettingsTemplate"
+                      DataType="{x:Type modelviews:SettingsVM}">
+            <views:Settings DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Name="MusicTemplate"
+                      DataType="{x:Type modelviews:MusicVM}">
+            <views:Music DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Name="MonstersTemplate"
+                      DataType="{x:Type modelviews:MonstersVM}">
+            <views:Monsters DataContext="{Binding}" />
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Border BorderBrush="{StaticResource winBorderColor}"
+            BorderThickness="1">
+
+        <DockPanel Background="{StaticResource BackColor}">
+
+            <!--Navigation Menu-->
+            <StackPanel DockPanel.Dock="Left"
+                        Orientation="Vertical"
+                        Width="250"
+                        Background="{StaticResource panelColor}">
+                <!--Menu Label-->
+                <StackPanel Orientation="Horizontal"
+                            Height="35"
+                            Margin="15,25,0,40">
+                    <fa:IconImage Icon="Bars" Width="30" Height="30" Foreground="White"/>
+                    <TextBlock Text="Menu"
+                               Foreground="{StaticResource fontColor}"
+                               FontSize="20"
+                               FontFamily="Inter"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"/>
+
+                </StackPanel>
+                <RadioButton Style="{StaticResource menuButton}"
+                             Tag="LightGreen"
+                             Click="btnCharacterSheet_Click"
+                             Name="btnCharacterSheet">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="List" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Character Sheet" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                             Tag="LightSalmon"
+                             Click="btnMap_Click"
+                             Name="btnMap">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Earth" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Map" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                           Tag="Pink"
+                           Click="btnMusic_Click"
+                           Name="btnMusic">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Music" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Music" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                            Tag="Turquoise"
+                            Click="btnMonsters_Click"
+                            Name="btnMonsters">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Skull" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Monster" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                             Tag="LightGray"
+                             Click="btnSettings_Click"
+                             Name="btnSettings">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+            </StackPanel>
+
+            <Grid>
+                <ContentControl Content="{Binding}"/>
+            </Grid>
+        </DockPanel>
+
+    </Border>
+</Window>
