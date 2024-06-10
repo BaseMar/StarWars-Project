@@ -46,7 +46,7 @@
     <Border BorderBrush="{StaticResource winBorderColor}"
             BorderThickness="1">
 
-        <DockPanel Background="{StaticResource BackColor}">
+        <DockPanel Background="{StaticResource BackColor}" Margin="1,0,-1,0">
 
             <!--Navigation Menu-->
             <StackPanel DockPanel.Dock="Left"
@@ -133,7 +133,26 @@
                             Margin="0,0,5,0"
                             MouseLeftButtonDown="panelControlBar_MouseLeftButtonDown"
                             MouseEnter="panelControlBar_MouseEnter">
-                    
+
+                    <Button x:Name="btnClose"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnClose_Click">
+                        <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+                    <Button x:Name="btnMaximize"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnMaximize_Click">
+                        <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+                    <Button x:Name="btnMinimize"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnMinimize_Click">
+                        <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+
                 </StackPanel>
                 <ContentControl Content="{Binding}"/>
             </Grid>
