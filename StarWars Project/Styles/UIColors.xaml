@@ -1,19 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    <!-- Background Color -->
-    <SolidColorBrush x:Key="BackColor" Color="#222831"/>
 
-    <!-- Window Border Color -->
-    <SolidColorBrush x:Key="winBorderColor" Color="#3F72AF"/>
+    <SolidColorBrush x:Key="BackgroundColor" Color="#222831"/>
+    <SolidColorBrush x:Key="BackgroundColor2" Color="#1B262C"/>
+    <SolidColorBrush x:Key="winBorderColor" Color="#00ADB5"/>
 
     <!-- Font Color -->
-    <SolidColorBrush x:Key="fontColor" Color="#BBE1FA"/>
-    <SolidColorBrush x:Key="fontOverColor" Color="#EAEAEA"/>
+    <SolidColorBrush x:Key="TextColor" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="TextOverColor" Color="#DBE2EF"/>
 
     <!-- Panel Colors -->
-    <SolidColorBrush x:Key="panelColor" Color="#252A34"/>
-    <SolidColorBrush x:Key="panelOverColor" Color="#1B262C"/>
-    <SolidColorBrush x:Key="panelActiveColor" Color="#0F4C75"/>
+    <SolidColorBrush x:Key="panelOverColor" Color="#00ADB5"/>
 
 </ResourceDictionary>

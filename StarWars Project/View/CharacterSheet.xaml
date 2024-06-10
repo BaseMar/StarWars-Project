@@ -7,30 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <TabControl x:Name="mainTabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabItem Header="Basic Information">
+    <TabControl x:Name="mainTabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource TabControlStyle}">
+        <TabItem Header="Basic Information" Style="{StaticResource TabItemStyle}">
             <Grid>
-                
+                <!-- Add content here -->
             </Grid>
         </TabItem>
-        <TabItem Header="Skills">
+        <TabItem Header="Skills" Style="{StaticResource TabItemStyle}">
             <Grid>
-                
+                <!-- Add content here -->
             </Grid>
         </TabItem>
-        <TabItem Header="Equipment">
+        <TabItem Header="Equipment" Style="{StaticResource TabItemStyle}">
             <Grid>
-                
+                <!-- Add content here -->
             </Grid>
         </TabItem>
-        <TabItem Header="Motivation and Obligation">
+        <TabItem Header="Motivation and Obligation" Style="{StaticResource TabItemStyle}">
             <Grid>
-                
+                <!-- Add content here -->
             </Grid>
         </TabItem>
-        <TabItem Header="Talents">
+        <TabItem Header="Talents" Style="{StaticResource TabItemStyle}">
             <Grid>
-                
+                <!-- Add content here -->
             </Grid>
         </TabItem>
     </TabControl>

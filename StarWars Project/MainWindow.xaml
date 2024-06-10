@@ -46,20 +46,20 @@
     <Border BorderBrush="{StaticResource winBorderColor}"
             BorderThickness="1">
 
-        <DockPanel Background="{StaticResource BackColor}">
+        <DockPanel Background="{StaticResource BackgroundColor}" Margin="1,0,-1,0">
 
             <!--Navigation Menu-->
             <StackPanel DockPanel.Dock="Left"
                         Orientation="Vertical"
                         Width="250"
-                        Background="{StaticResource panelColor}">
+                        Background="{StaticResource BackgroundColor2}">
                 <!--Menu Label-->
                 <StackPanel Orientation="Horizontal"
                             Height="35"
                             Margin="15,25,0,40">
                     <fa:IconImage Icon="Bars" Width="30" Height="30" Foreground="White"/>
                     <TextBlock Text="Menu"
-                               Foreground="{StaticResource fontColor}"
+                               Foreground="{StaticResource TextColor}"
                                FontSize="20"
                                FontFamily="Inter"
                                FontWeight="Medium"
@@ -95,7 +95,7 @@
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
-                            Tag="Turquoise"
+                            Tag="LightSkyBlue"
                             Click="btnMonsters_Click"
                             Name="btnMonsters">
                     <StackPanel Orientation="Horizontal">
@@ -118,8 +118,6 @@
                 <Grid.RowDefinitions>
                     <!--Control Bar-->
                     <RowDefinition Height="25"/>
-                    <!--Header Caption-->
-                    <RowDefinition Height="35"/>
                     <!--Content Section-->
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
@@ -133,9 +131,33 @@
                             Margin="0,0,5,0"
                             MouseLeftButtonDown="panelControlBar_MouseLeftButtonDown"
                             MouseEnter="panelControlBar_MouseEnter">
-                    
+
+                    <Button x:Name="btnClose"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnClose_Click">
+                        <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+                    <Button x:Name="btnMaximize"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnMaximize_Click">
+                        <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+                    <Button x:Name="btnMinimize"
+                            Style="{StaticResource controlButton}"
+                            Tag="IndianRed"
+                            Click="btnMinimize_Click">
+                        <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+
                 </StackPanel>
-                <ContentControl Content="{Binding}"/>
+                
+                <!--Content Section-->
+                <Grid Grid.Row="1">
+                    <ContentControl Content="{Binding}"
+                                    Margin="15"/>
+                </Grid>
             </Grid>
         </DockPanel>
 
