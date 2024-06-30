@@ -26,7 +26,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Margin" Value="0,0,0,5"/>
                 <Setter Property="Background" Value="{StaticResource panelOverColor}"/>
-                <Setter Property="Foreground" Value="{StaticResource TextOverColor}"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
             </Trigger>
             
@@ -93,8 +93,8 @@
     <!--control button icon-->
     <Style x:Key="TabControlStyle" TargetType="TabControl">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource winBorderColor}"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -102,11 +102,12 @@
 
     <Style x:Key="TabItemStyle" TargetType="TabItem">
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Margin" Value="2 0 2 1"/>
-        <Setter Property="Padding" Value="10 10"/>
+        <Setter Property="Margin" Value="5 0 5 -5"/>
+        <Setter Property="Padding" Value="10 2 10 2"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontFamily" Value="Inter"/>
         <Setter Property="FontSize" Value="20"/>
@@ -117,7 +118,7 @@
                 <ControlTemplate TargetType="TabItem">
                     <Grid SnapsToDevicePixels="True">
                         <Border Background="{TemplateBinding Background}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderThickness="0 0 0 4"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Margin="{TemplateBinding Margin}">
                             <ContentPresenter HorizontalAlignment="Center" 
@@ -131,12 +132,16 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource panelOverColor}"/>
-                            <Setter Property="Foreground" Value="{StaticResource TextOverColor}"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{StaticResource panelOverColor}"/>
+                            <Setter Property="Margin" Value="5 0 5 1"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource panelOverColor}"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="{StaticResource panelOverColor}"/>
-                            <Setter Property="Foreground" Value="{StaticResource TextOverColor}"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{StaticResource panelOverColor}"/>
+                            <Setter Property="Margin" Value="5 0 5 1"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource panelOverColor}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

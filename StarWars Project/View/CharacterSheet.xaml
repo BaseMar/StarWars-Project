@@ -10,7 +10,41 @@
     <TabControl x:Name="mainTabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource TabControlStyle}">
         <TabItem Header="Basic Information" Style="{StaticResource TabItemStyle}">
             <Grid>
-                <!-- Add content here -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Add content to the grid cells -->
+                <StackPanel Grid.Row="0" Grid.Column="0" Width="250" Orientation="Vertical" Margin="0,10,0,20">
+                    <TextBox x:Name="txtCharacterName" Style="{StaticResource textBox}"></TextBox>
+                    <ComboBox x:Name="menuSpecies" ></ComboBox>
+                    <ComboBox x:Name="menuCareer" ></ComboBox>
+                    <ComboBox x:Name="menuTree" ></ComboBox>
+                    <ComboBox x:Name="menuGender" ></ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Width="250" Orientation="Vertical" Margin="0,10,0,20">
+                    <TextBox x:Name="txtAge" Style="{StaticResource textBox}"></TextBox>
+                    <TextBox x:Name="txtHeight" Style="{StaticResource textBox}"></TextBox>
+                    <TextBox x:Name="txtBuild" Style="{StaticResource textBox}"></TextBox>
+                    <TextBox x:Name="txtHair" Style="{StaticResource textBox}"></TextBox>
+                    <TextBox x:Name="txtEyes" Style="{StaticResource textBox}"></TextBox>
+                </StackPanel>
+
+                <UniformGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Rows="1" Columns="6" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,10">
+                    <TextBlock Text="Brawn" VerticalAlignment="Center" Margin="10,0"/>
+                    <TextBlock Text="Agility" VerticalAlignment="Center" Margin="10,0"/>
+                    <TextBlock Text="Intellect" VerticalAlignment="Center" Margin="10,0"/>
+                    <TextBlock Text="Cunning" VerticalAlignment="Center" Margin="10,0"/>
+                    <TextBlock Text="Willpower" VerticalAlignment="Center" Margin="10,0"/>
+                    <TextBlock Text="Presence" VerticalAlignment="Center" Margin="10,0"/>
+                </UniformGrid>
             </Grid>
         </TabItem>
         <TabItem Header="Skills" Style="{StaticResource TabItemStyle}">
