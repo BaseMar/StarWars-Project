@@ -15,7 +15,7 @@
         </TabItem>
         <TabItem Header="Skills" Style="{StaticResource TabItemStyle}">
             <Grid>
-                <!-- Add content here -->
+                <!-- Add content here xd-->
             </Grid>
         </TabItem>
         <TabItem Header="Equipment" Style="{StaticResource TabItemStyle}">
